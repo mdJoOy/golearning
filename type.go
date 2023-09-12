@@ -1,35 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
+func Sqrt(x float64) float64 {
+	z := float64(1)
+	for i := 1; i <= 10; i++ {
+		fmt.Println(z)
+		z -= (z*z - x) / (2 * z)
+	}
+	return z
+}
 func main() {
-	fvNum := []int{3, 6, 9}
-	fmt.Println(fvNum)
-	fmt.Printf("%T\n", fvNum)
-
-	coderLevel := map[string]string{
-		"joy":     "begginer",
-		"rifat":   "noob",
-		"sakibul": "intermidiate",
-	}
-
-	fmt.Println(coderLevel)
-	fmt.Printf("%T\n", coderLevel)
-
-	type person struct {
-		name string
-		age  int
-	}
-	you := person{"joy", 20}
-	fmt.Println(you)
-
-	fmt.Printf("%T\n", you)
-	x := 5
-	ptr := &x
-	fmt.Printf("The type of ptr is %T and the value is %v\n", ptr, ptr)
-
-	x = 3
-	x += 2
-	x++
-	fmt.Println(x)
+	fmt.Println(Sqrt(4))
+	fmt.Println(math.Sqrt(4))
 }
