@@ -4,12 +4,10 @@ import "fmt"
 
 func main() {
 	m := map[int]bool{1: true, 2: false, 3: false}
+	delete(m, 2)
 	fmt.Println(m)
-	delete(m, 1)
-	fmt.Println("after delete", m)
-
+	m[2] = true
 	for k, v := range m {
-		fmt.Printf("key: %d, value: %t\n", k, v)
+		fmt.Printf("Key: %d, Value: %t\n", k, v)
 	}
-
 }
