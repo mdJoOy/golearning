@@ -1,24 +1,22 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
 	"log"
 	"os"
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-
-	for scanner.Scan() {
-		text := scanner.Text()
-		fmt.Println(text)
-		if text == "exit" {
-			fmt.Println("exiting scaning...")
-			break
-		}
-	}
-	if err := scanner.Err(); err != nil {
+	file, err := os.OpenFile("info.txt", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
+	if err != nil {
 		log.Fatal(err)
 	}
+	defer file.Close()
+	bs := []byte("The Go gopher is an iconic mascot!")
+	numBytesWritten, err := file.Write(bs)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("numer of bytes written to file: %d\n", numBytesWritten)
+
 }

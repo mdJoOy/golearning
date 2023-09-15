@@ -1,4 +1,0 @@
-Hello Ghopher!
-:)
-Go programming is fun
-It is a modern language with all necessary things,  i like golang .
