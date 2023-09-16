@@ -12,11 +12,10 @@ func main() {
 	}
 	defer file.Close()
 	bs := []byte("The Go gopher is an iconic mascot!")
-	numBytesWritten, err := file.Write(bs)
+	bytesWritten, err := file.Write(bs)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	log.Printf("numer of bytes written to file: %d\n", numBytesWritten)
+	log.Printf("Number of bytes written: %d\n", bytesWritten)
 
 }
