@@ -19,13 +19,16 @@ func main() {
 		name:     "joy",
 		age:      20,
 		fvColour: []string{"Blue", "Black"},
-		Grades:   Grades{grade: 98, course: "golang"},
+		Grades:   Grades{grade: 33, course: "Biology"},
 	}
 	you := Person{
 		name:     "idk",
 		fvColour: []string{"Blue", "Green", "Red"},
 		Grades:   Grades{grade: 98, course: "golang"},
 	}
+
+	me.Grades.grade = 99
+	me.Grades.course = "golang"
 	fmt.Printf("%+v\n", me)
 	fmt.Printf("%+v\n", you)
 }
